@@ -1,0 +1,28 @@
+'''
+Created on Oct 6, 2017
+Wall walk
+@author: sarascherrer
+'''
+from random import choice
+import random
+from cmath import sqrt
+from decimal import _sqrt_nearest
+
+grid_size = 10 
+
+moves = [-1,1]
+t = 0
+M = grid_size // 2
+
+print '| ' + '_ '*5 + 'o ' + '_ '*5 + '|', t
+
+for i in range(100):
+    t = t + 1
+    if 0 < M < 10:
+        dM = random.choice(moves)
+        M += dM
+        L = (grid_size) - M
+        print '| ' + '_ '*M + 'o ' + '_ '*L + '|', t
+    else:
+        print 'Ended at', t-1, '(sqrt',(t-1), ')','=', sqrt(t-1), 
+        break
